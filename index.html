@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta charset=utf-8 />
+<title>JAVASCRIPT</title>
+</head>
+<body>
+  <div class="container">
+   <div class="col-lg-3">
+     <form id="taskList">
+       <div class="form-group">
+          <label>TITLE</label>
+         <div class="input-group">
+          <div class="input-group-addon">
+            @
+          </div>
+          <input type="text" name="title" id="title" placeholder="USERNAME" class="form-control" />
+          </div>
+         </div>
+        
+      <div class="form-group">
+      <label>NAME</label>
+      <div class="input-group">
+      <div class="input-group-addon">
+      <span class="glyphicon glyphicon-user"></span>
+      </div>
+      <input type="text" name="name" id="name" placeholder="NAME" class="form-control" />
+      </div>   
+      </div>
+        
+
+    <div class="form-group">
+    <label>TICKETS</label>
+    <div class="input-group">
+    <div class="input-group-addon">
+    <span class="glyphicon glyphicon-search"></span>
+    </div>
+    <input type="text" name="ticket" id="tickets" placeholder="TICKETS" class="form-control" />
+    </div>
+    
+    </div>
+
+        <input type="button" class="btn btn-danger" id="submit" value="INSERT"  />
+       </div>
+     </form>
+   </div>
+  </div>
+  <div id="display"></div>
+  <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+ </body>
+  </html>
+
+
