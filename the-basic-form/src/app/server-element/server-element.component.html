@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="col-lg-3">
+    <div class="flyod">
+        <label>FIRSTNAME</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="anotherUser.firstName" #ctrl="ngModel">
+        <label>LASTNAME</label>
+        <input type="text" name="lastName" class="form-control" [(ngModel)]="anotherUser.lastName" #ctrl="ngModel">
+        <label>Location</label>
+        <input type="text" name="location" class="form-control" [(ngModel)]="anotherUser.location" #ctrl="ngModel">
+        <label>JOB</label>
+        <input type="text" name="Job" class="form-control" [(ngModel)]="anotherUser.Job" #ctrl="ngModel">
+        <label>DATE</label>
+        <input type="date" name="date" class="form-control" [(ngModel)]="anotherUser.date" #ctrl="ngModel">
+    </div>
+  </div>
+</div>
+ <div class="container">
+    <div class="hello">
+        <input *ngIf="changeUserName" (keydown)="onKeydown($event)" type="text" name="username" [(ngModel)]="userName">
+        <br/>
+        <p *ngIf="!changeUserName" (click)="changeUserName=true">{{ userName }}</p>
+        <br/>
+        <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="servernameContent"></textarea>
+        <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="serverlastNameContent"></textarea>
+        <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="serverlocationContent"></textarea>
+        <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="serverJobContent"></textarea>
+        <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="serverDate"></textarea>
+    
+        <button class="btn btn-danger" (click)="showContent=true" *ngIf="!showContent">CLICK AGAIN</button>
+    
+        <div *ngIf="showContent" (click)="showContent=false">
+          {{ servernameContent }} {{ anotherUser.firstName }}
+          {{ serverlastNameContent }} {{ anotherUser.lastName }}
+          {{ serverlocationContent }} {{ anotherUser.location }}
+          {{ serverJobContent }} {{ anotherUser.Job }}
+          {{ serverDate }} {{ anotherUser.date }}
+        </div>
+      </div>
+
+ </div>

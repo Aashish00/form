@@ -1,0 +1,10 @@
+<label>USERNAME</label>
+<input type="text"
+class="form-control"
+#newServerName>
+<label>PASSWORD</label>
+<input type="text" class="form-control" [(ngModel)]="newServerContent">
+<button class="btn btn-danger"
+(click)="onAddServer(newServerName)">RED</button>
+<button class="btn btn-danger"
+(click)="onAddBlueprint(newServerName)">GREEN</button>

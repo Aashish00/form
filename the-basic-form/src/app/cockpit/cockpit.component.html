@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="col-xs-3">
+    <form>
+        <label>FIRSTNAME</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="serverElements.firstName" #ctrl="ngModel">
+        <label>LASTNAME</label>
+        <input type="text" name="lastName" class="form-control" [(ngModel)]="serverElements.lastName" #ctrl="ngModel">
+        <label>Location</label>
+        <input type="text" name="location" class="form-control" [(ngModel)]="serverElements.location" #ctrl="ngModel">
+        <label>JOB</label>
+        <input type="text" name="Job" class="form-control" [(ngModel)]="serverElements.Job" #ctrl="ngModel">
+        <label>DATE</label>
+        <input type="date" name="date" class="form-control" [(ngModel)]="serverElements.date" #ctrl="ngModel">
+        <button class="btn btn-danger"
+         printSectionId="print-section"
+         [printStyle] = "{'div.ashish':{
+          'page-break-after': 'always'
+        }
+      }"
+      [printStyle] = "{'div.ram':{
+        'page-break-after': 'always'
+      }
+    }"
+    [printStyle] = "{'div.binam':{
+      'page-break-after': 'always'
+    }
+  }"
+         ngxPrint>PRINT</button>
+         <button class="btn btn-danger" type="reset" value="Reset">RESET</button>
+    </form>
+  </div>
+</div>
+<div class="container">
+    <div id="print-section">
+      <div class="ashish">
+          <div class="row">
+            <div class="hello">
+              <input *ngIf="changeUserName" (keydown)="onKeydown($event)" type="text" name="username" [(ngModel)]="userName">
+              <br/>
+              <p *ngIf="!changeUserName" (click)="changeUserName=true"></p>
+              <br/>
+              <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="userfirstNameContent"></textarea>
+              <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="usersecondNameContent"></textarea>
+              <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="userthirdNameContent"></textarea>
+              <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="userfourthNameContent"></textarea>
+              <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="userfifthNameContent"></textarea>
+          
+              <button class="btn btn-danger" (click)="showContent=true" *ngIf="!showContent">CLICK AGAIN</button>
+          
+              <div *ngIf="showContent" (click)="showContent=false">
+                {{ userfirstNameContent }} {{ serverElements.firstName }}
+                {{ usersecondNameContent }} {{ serverElements.lastName }}
+                {{ userthirdNameContent }} {{ serverElements.location }}
+                {{ userfourthNameContent }} {{ serverElements.Job }}
+                {{ userfifthNameContent }} {{ serverElements.date }}
+              </div>
+            </div>
+        </div>
+        </div>
+        <div class="ram">
+          <p>
+             <app-server-element
+             [anotherUser]="serverElements">
+             </app-server-element>
+          </p>
+        </div>
+         <div class="binam">
+          <app-variable
+          [newVariable]="serverElements">
+          </app-variable>
+      </div>
+          
+         </div>
+         
+         </div>
+
+           
+        
+        

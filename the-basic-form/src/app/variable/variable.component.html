@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col-lg-4">
+    <div class="gallo">
+        <label>FIRSTNAME</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="newVariable.firstName" #ctrl="ngModel">
+        <label>LASTNAME</label>
+        <input type="text" name="lastName" class="form-control" [(ngModel)]="newVariable.lastName" #ctrl="ngModel">
+        <label>Location</label>
+        <input type="text" name="location" class="form-control" [(ngModel)]="newVariable.location" #ctrl="ngModel">
+        <label>JOB</label>
+        <input type="text" name="Job" class="form-control" [(ngModel)]="newVariable.Job" #ctrl="ngModel">
+        <label>DATE</label>
+        <input type="date" name="date" class="form-control" [(ngModel)]="newVariable.date" #ctrl="ngModel">
+      </div>
+      </div>
+    </div>
+
+     <div class="container">
+         <div class="row">
+          <div class="hello">
+            <input *ngIf="changeUserName" (keydown)="onKeydown($event)" type="text" name="username" [(ngModel)]="serverElements.firstName">
+            <br/>
+            <p *ngIf="!changeUserName" (click)="changeUserName=true">{{ userName }}</p>
+            <br/>
+            <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="variablefirstName"></textarea>
+            <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="variablelastName"></textarea>
+            <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="variablelocation"></textarea>
+            <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="variableJob"></textarea>
+            <textarea rows="5" cols="20" *ngIf="!showContent" [(ngModel)]="variabledate"></textarea>
+        
+            <button class="btn btn-danger" (click)="showContent=true" *ngIf="!showContent"><em>CLICK AGAIN</em></button>
+        
+            <div *ngIf="showContent" (click)="showContent=false">
+              {{ variablefirstName }} {{ newVariable.firstName }}
+              {{ variablelastName }} {{ newVariable.lastName }}
+              {{ variablelocation }} {{ newVariable.location }}
+              {{ variableJob }} {{ newVariable.Job }}
+              {{ variabledate  }}  {{ newVariable.date }}
+            </div>
+          </div>     
+
+         </div>
+        
+       
+     </div>
+    
